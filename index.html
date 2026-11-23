@@ -1,1 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Asian Hair Salon | Asian Hair Specialist in Marjanishvili, Tbilisi</title>
+  <meta name="description" content="Asian hair salon in Marjanishvili, Tbilisi, Georgia. 13+ years of Tokyo experience. Thorough consultation with translation support, bone-structure haircuts, layers, wolf cuts, and effortless home styling. Cut 170 GEL.">
 
+  <!-- SNSシェア用（OGP） -->
+  <meta property="og:title" content="Japanese Asian Hair Salon | Marjanishvili, Tbilisi">
+  <meta property="og:description" content="Asian hair specialist with 13+ years in Tokyo. Tailored bone-structure haircuts, layers, wolf cuts, and high home reproducibility in Marjanishvili, Tbilisi.">
+  <meta property="og:type" content="website">
+
+  <!-- AI検索(GEO)・Google(SEO/MEO)専用 構造化データ（画面には表示されません） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Japanese Asian Hair Salon",
+    "description": "Asian hair salon and Tokyo-trained hairstylist in Marjanishvili, Tbilisi, Georgia. Over 13 years of experience specializing in Asian bone structure, layer cuts, wolf cuts, and home-reproducible haircuts. Thorough pre-cut consultation with translation tools available so language is never a barrier.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Marjanishvili, Tbilisi",
+      "addressCountry": "GE"
+    },
+    "areaServed": "Marjanishvili, Tbilisi, Georgia",
+    "availableLanguage": ["English", "Japanese"],
+    "priceRange": "170 GEL",
+    "knowsAbout": [
+      "Asian Hair Salon",
+      "Asian Bone Structure",
+      "Layer Cut",
+      "Wolf Cut",
+      "Face-Framing Layers",
+      "Bangs",
+      "Home Hair Styling Advice",
+      "Tokyo Hair Styling"
+    ],
+    "hasMap": "https://maps.app.goo.gl/VDe1WdcsGXdvfSEZ8",
+    "sameAs": [
+      "https://www.instagram.com/akokoa?bqrl=MXFsbW15emp1MHZ3bQ==",
+      "https://youtube.com/@tbilisihair?si=8mz20eOh430ztwfv",
+      "https://x.com/biginingcca",
+      "https://note.com/thedreamroad/n/nf756a8fdfdc3"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "New Client Haircut (Without Shampoo and Styling)",
+        "price": "170",
+        "priceCurrency": "GEL"
+      },
+      {
+        "@type": "Offer",
+        "name": "Shampoo and Styling (with Cut)",
+        "price": "10",
+        "priceCurrency": "GEL"
+      },
+      {
+        "@type": "Offer",
+        "name": "Japanese Product Hair Treatment Mask (with Cut)",
+        "price": "30",
+        "priceCurrency": "GEL"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9f7f4;
+      --surface-color: #ffffff;
+      --text-main: #2d2b29;
+      --text-muted: #5c5852;
+      --accent: #2d2b29;
+      --border-color: #e6e2da;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding-top: 64px;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 常にカット受付のみの料金と予約ボタンを表示する固定バー */
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      z-index: 1000;
+    }
+
+    .brand-mini {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .brand-mini br {
+      display: none;
+    }
+
+    .sticky-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sticky-price {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .btn-small {
+      background-color: var(--accent);
+      color: #ffffff;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 3px;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-small:hover {
+      opacity: 0.85;
+    }
+
+    /* 共通コンテナ */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 68px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.25;
+    }
+
+    /* 1. ファーストビュー */
+    .hero {
+      text-align: center;
+      padding: 96px 0 84px;
+      background-color: var(--surface-color);
+    }
+
+    .hero-thanks {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero h1 {
+      font-size: 3.1rem;
+      line-height: 1.2;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #ffffff;
+      padding: 16px 38px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 3px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background-color: var(--surface-color);
+      color: var(--text-main);
+      border: 1px solid var(--accent);
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 3px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    /* 2. お悩みリスト */
+    .pain-list {
+      list-style: none;
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--surface-color);
+      padding: 36px;
+      border: 1px solid var(--border-color);
+    }
+
+    .pain-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .pain-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .pain-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* 3. 強み・選ばれる理由 */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .strength-card {
+      background: var(--surface-color);
+      padding: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .strength-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .strength-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .strength-card p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* 4. メニュー＆ポリシー */
+    .menu-card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      padding: 44px 36px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .menu-item:last-of-type {
+      margin-bottom: 36px;
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .menu-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .menu-price {
+      font-size: 1.15rem;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--text-main);
+    }
+
+    .menu-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .policy-box {
+      background-color: var(--bg-color);
+      padding: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    .policy-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .policy-list {
+      list-style: none;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .policy-list li {
+      margin-bottom: 10px;
+      line-height: 1.55;
+    }
+
+    .policy-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-note {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* 5. ヘアスタイルギャラリー（2枚用・元比率そのまま表示） */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      background-color: #eae6df;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 6. アクセス・SNS・予約 */
+    .links-box {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .area-badge {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .links-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    /* にほんごカテゴリー枠 */
+    .jp-category {
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .jp-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: var(--text-main);
+    }
+
+    .btn-line {
+      display: inline-block;
+      background-color: #06c755;
+      color: #ffffff;
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 3px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-line:hover {
+      opacity: 0.88;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* スマホ表示用の調整 */
+    @media (max-width: 600px) {
+      .sticky-header {
+        padding: 0 14px;
+      }
+      .brand-mini {
+        font-size: 0.95rem;
+        line-height: 1.2;
+      }
+      .brand-mini br {
+        display: inline;
+      }
+      .sticky-right {
+        gap: 10px;
+      }
+      .sticky-price {
+        font-size: 0.82rem;
+      }
+      .btn-small {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+      }
+      .hero {
+        padding: 76px 0 68px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 52px 0;
+      }
+      .pain-list, .strength-card, .menu-card, .links-box {
+        padding: 24px 20px;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .menu-title {
+        font-size: 1.08rem;
+      }
+      .menu-price {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- スクロールしても常に表示されるバー -->
+  <header class="sticky-header">
+    <div class="brand-mini">Japanese Asian<br>Hair Salon</div>
+    <div class="sticky-right">
+      <span class="sticky-price">Cut Only: 170 GEL</span>
+      <a href="https://tally.so/r/wQqARA" target="_blank" rel="noopener noreferrer" class="btn-small">Book Now</a>
+    </div>
+  </header>
+
+  <!-- 1. 見つけてくれてありがとう（上）＋ 店名（下） -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-thanks">Thank you for finding us.</p>
+      <h1>Japanese Asian<br>Hair Salon</h1>
+      <a href="https://tally.so/r/wQqARA" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Appointment</a>
+    </div>
+  </section>
+
+  <!-- 2. お悩みへの共感 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Do Any of These Sound Familiar?</h2>
+      <ul class="pain-list">
+        <li>You worry about the language barrier or aren't sure how to explain your ideal cut—like layers, a wolf cut, or bangs.</li>
+        <li>Your current hairstyle feels bulky, heavy, or simply doesn't suit your face shape.</li>
+        <li>You feel hesitant about visiting local salons that may not understand Asian hair textures or bone structure.</li>
+        <li>Even when you show a reference photo, the final balance turns out completely different from what you imagined.</li>
+        <li>Your hair only looks good right after a salon blow-dry, and styling it yourself at home feels impossible.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. 強み・解決策 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="strength-grid">
+        <div class="strength-card">
+          <span class="strength-num">01</span>
+          <h3>Thorough Consultation &amp; No Language Barrier</h3>
+          <p>Before picking up the scissors, we listen closely to your wishes—using full translation support whenever needed so language never gets in the way. By sharing a clear vision of the finished style together beforehand, you can feel confident and relaxed from the start.</p>
+        </div>
+        <div class="strength-card">
+          <span class="strength-num">02</span>
+          <h3>Asian Bone Structure &amp; Intentional Layer Design</h3>
+          <p>Backed by 13+ years of experience in Tokyo and a deep understanding of Asian hair and bone structure, we don't just cut layers or a wolf cut blindly. We carefully explain where to shorten for volume and where to keep length for balance—tailoring every angle to your head shape.</p>
+        </div>
+        <div class="strength-card">
+          <span class="strength-num">03</span>
+          <h3>Lasting Home Reproducibility, Not Just a Blow-Dry</h3>
+          <p>We never rely on temporary salon blow-drying to make a cut look good. Our precision technique removes unwanted bulk naturally so the shape stays clean, and we give practical home styling advice so you can easily recreate the look every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. メニュー＆料金 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">New Client Haircut</h2>
+      <div class="menu-card">
+        
+        <div class="menu-item">
+          <div class="menu-header">
+            <span class="menu-title">①Cut</span>
+            <span class="menu-price">170 GEL</span>
+          </div>
+          <p class="menu-desc">Without Shampoo and Styling</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-header">
+            <span class="menu-title">②Shampoo and Styling</span>
+            <span class="menu-price">10 GEL</span>
+          </div>
+          <p class="menu-desc">＊ Only available with Cut</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-header">
+            <span class="menu-title">③Japanese Product Hair Treatment Mask</span>
+            <span class="menu-price">30 GEL</span>
+          </div>
+          <p class="menu-desc">
+            Deep moisture &amp; repair hair mask (after shampoo)<br>
+            Treatment absorbs better when shampoo is added<br>
+            ＊ Only available with Cut
+          </p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-header">
+            <span class="menu-title">④Late fee every 15 min</span>
+            <span class="menu-price">10 GEL</span>
+          </div>
+        </div>
+
+        <div class="policy-box">
+          <div class="policy-title">📌 Booking Policy (Please check)</div>
+          <ul class="policy-list">
+            <li>💳 Payment: Cash or Bank Transfer to Bank of Georgia (No credit cards)</li>
+            <li>❌ Non-refundable: All payments are final</li>
+            <li>📩 Confirmation: Booking is complete only after receiving my message via Email/Instagram</li>
+            <li>
+              ⏰ Late Fee: +10 GEL for every 15 mins late
+              <span class="policy-note">
+                (Many streets around the salon are one-way, so depending on your direction, you may need to take a detour. Please be extra careful of traffic and rainy days when coming by taxi!)<br>
+                Since we rent the space by the hour, we truly appreciate your cooperation.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ヘアスタイルギャラリー（2枚） -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Hairstyle Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="tbilisi-georgiahair-before-after_20261123_214141_0000.png" alt="Asian hair salon before and after layer haircut and bangs in Marjanishvili Tbilisi">
+        </div>
+        <div class="gallery-item">
+          <img src="tbilisi-georgia-hair-layer_20261123_214152_0000.png" alt="Asian hair styles, layer cut, wolf cut, and short haircut in Tbilisi">
+        </div>
